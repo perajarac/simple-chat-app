@@ -1,3 +1,7 @@
+# Simple chat app
+
+The project was created to familiarize myself with the functionality of the Gorilla WebSocket library in Go. Boilerplate for some future upgrades.
+
 ## Building backend
 
 Clone repo:

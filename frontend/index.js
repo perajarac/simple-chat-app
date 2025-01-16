@@ -67,8 +67,24 @@ if(window["WebSocket"]){
 
 
 conn.addEventListener('message', function(event) {
-    console.log('Message from server ', event);
+    const messageDiv = document.createElement("div");
+    messageDiv.classList.add("message");
+    const mess = event.data
+    const sender = mess.split(":")[0]; 
+    if(sender != username){
+        messageDiv.textContent = event.data;
+        chatBox.appendChild(messageDiv);
+        chatBox.scrollTop = chatBox.scrollHeight;
+        // Animate message
+        messageDiv.style.opacity = "0";
+        setTimeout(() => {
+            messageDiv.style.opacity = "1";
+            messageDiv.style.transform = "scale(1)";
+        }, 10);
+    }
 });
+
+
 
 conn.addEventListener('close', function(event) {
     console.log('WebSocket closed: ', event);
