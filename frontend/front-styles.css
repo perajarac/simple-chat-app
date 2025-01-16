@@ -1,0 +1,171 @@
+/* Full-screen background with a cool transparent effect */
+body {
+    font-family: Arial, sans-serif;
+    background: url('https://source.unsplash.com/random/1920x1080/?technology,abstract') no-repeat center center/cover;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    backdrop-filter: blur(8px);
+}
+
+.username-container {
+    width: 400px;
+    background: rgba(30, 30, 30, 0.8); /* Transparent glass effect */
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    backdrop-filter: blur(15px);
+}
+
+/* Chat container with a sleek transparent glass effect */
+.chat-container {
+    width: 400px;
+    background: rgba(30, 30, 30, 0.8); /* Transparent glass effect */
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    backdrop-filter: blur(15px);
+}
+
+/* Header with a sleek design */
+header {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Chat box with auto-scroll */
+.chat-box {
+    height: 300px;
+    overflow-y: auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Messages with cool animations */
+.message {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 12px;
+    border-radius: 10px;
+    margin: 5px;
+    max-width: 70%;
+    font-size: 16px;
+    animation: popIn 0.3s ease-in-out;
+    backdrop-filter: blur(10px);
+}
+
+/* Input area for sending messages */
+.input-container {
+    display: flex;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    border-top: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.input-container input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    outline: none;
+}
+
+.input-container button {
+    padding: 10px;
+    background: #007bff;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.input-container button:hover {
+    background: #0056b3;
+}
+
+/* Cool pop-in animation for messages */
+@keyframes popIn {
+    0% { transform: scale(0.5); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background: #121212; /* Dark background */
+}
+
+body.dark-mode .username-container, 
+body.dark-mode .chat-container {
+    background: rgba(50, 50, 50, 0.8); /* Darker transparent glass effect */
+}
+
+body.dark-mode header {
+    background: rgba(0, 0, 0, 0.8); /* Dark header */
+    color: white;
+}
+
+body.dark-mode .message {
+    background: rgba(255, 255, 255, 0.1); /* Darker message background */
+    color: white;
+}
+
+body.dark-mode .input-container {
+    background: rgba(0, 0, 0, 0.7); /* Dark input container */
+}
+
+body.dark-mode .input-container input {
+    background: rgba(255, 255, 255, 0.1); /* Darker input field */
+}
+
+body.dark-mode .input-container button {
+    background: #007bff; /* Blue button */
+}
+
+/* Light Mode Styles */
+body.light-mode {
+    background: #f0f0f0; /* Light background */
+}
+
+body.light-mode .username-container, 
+body.light-mode .chat-container {
+    background: rgba(255, 255, 255, 0.8); /* Lighter transparent glass effect */
+}
+
+body.light-mode header {
+    background: rgba(255, 255, 255, 0.8); /* Lighter header */
+    color: black;
+}
+
+body.light-mode .message {
+    background: rgba(0, 0, 0, 0.1); /* Lighter message background */
+    color: black;
+}   
+
+body.light-mode .input-container {
+    background: rgba(255, 255, 255, 0.7); /* Lighter input container */
+}
+
+body.light-mode .input-container input {
+    background: rgba(0, 0, 0, 0.1); /* Lighter input field */
+    color: black
+}
+
+body.light-mode .input-container button {
+    background: #007bff; /* Blue button */
+}
