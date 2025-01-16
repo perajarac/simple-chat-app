@@ -3,12 +3,12 @@
 Clone repo:
 
 ```bash
-    git clone https://github.com/perajarac/simple_chat_app.git
+git clone https://github.com/perajarac/simple_chat_app.git
 ```
 
 Run backend:
 
 ```bash
-    cd backend
-    go run *.go
+cd backend
+go run *.go
 ```
