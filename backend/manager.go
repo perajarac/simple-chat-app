@@ -58,3 +58,9 @@ func (m *Manager) removeClient(client *Client) {
 		delete(m.clients, client)
 	}
 }
+
+func (m *Manager) Broadcast(message string) {
+	for client := range m.clients {
+		client.egress <- []byte(message)
+	}
+}

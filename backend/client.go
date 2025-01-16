@@ -43,6 +43,7 @@ func (c *Client) readMessages() {
 		}
 
 		log.Println(string(payload))
+		go c.manager.Broadcast(string(payload))
 
 	}
 }
@@ -57,12 +58,14 @@ func (c *Client) writeMessages() {
 		select {
 		case message, ok := <-c.egress:
 			if !ok {
-				if err := c.connection.WriteMessage(websocket.CloseMessage, nil); err != nil {
+				if err := c.connection.WriteMessage(websocket.TextMessage, nil); err != nil {
 					log.Println("connection closed: ", err)
 				}
 				return
 			}
-			if err := c.connection.WriteMessage(websocket.CloseMessage, message); err != nil {
+			//2 same message in chanell so poping one
+			message = <-c.egress
+			if err := c.connection.WriteMessage(websocket.TextMessage, message); err != nil {
 				log.Printf("failed to send message: %v\n", err)
 			}
 
