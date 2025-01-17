@@ -1,4 +1,5 @@
-*.go linguist-detectable=true
-*.js linguist-detectable=true
-*.html linguist-detectable=false
-*.css linguist-detectable=false
+backend/*.go linguist-detectable=true
+frontend/* linguist-detectable=false
+frontend/*.js linguist-vendored
+frontend/*.css linguist-vendored
+frontend/*.html linguist-vendored
