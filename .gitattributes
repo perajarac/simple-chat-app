@@ -1,4 +1,10 @@
+# Ensure Go files are counted
 backend/*.go linguist-detectable=true
+
+# Ensure JavaScript files are counted
 frontend/*.js linguist-detectable=true
+
+# Mark other files as "vendored" so they don't affect language stats
 frontend/*.css linguist-vendored
 frontend/*.html linguist-vendored
+frontend/*.json linguist-vendored
