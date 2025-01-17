@@ -38,10 +38,6 @@ func (c *Client) readMessages() {
 			break
 		}
 
-		for wsclient := range c.manager.clients {
-			wsclient.egress <- payload
-		}
-
 		log.Println(string(payload))
 		go c.manager.Broadcast(string(payload))
 
@@ -64,7 +60,6 @@ func (c *Client) writeMessages() {
 				return
 			}
 			//2 same message in chanell so poping one
-			message = <-c.egress
 			if err := c.connection.WriteMessage(websocket.TextMessage, message); err != nil {
 				log.Printf("failed to send message: %v\n", err)
 			}
