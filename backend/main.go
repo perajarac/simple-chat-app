@@ -9,7 +9,7 @@ func main() {
 	// Set the server to listen on port 8080
 	setupAPI()
 	log.Println("Server started at http://127.0.0.1:8080")
-	if err := http.ListenAndServe("0.0.0.0:8080", nil); err != nil {
+	if err := http.ListenAndServe(":8080", nil); err != nil {
 		log.Fatal(err)
 	}
 }

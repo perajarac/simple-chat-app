@@ -1,6 +1,6 @@
 
 # Set the number of browser tabs to open
-NUM_TABS=4  # Change this value as needed
+NUM_TABS=2 #Change this value as needed
 
 cd backend || { echo "Backend folder not found!"; exit 1; }
 
@@ -16,7 +16,7 @@ sleep 3
 # Open the URL in multiple browser tabs
 echo "Opening $NUM_TABS browser instances..."
 for ((i = 0; i < NUM_TABS; i++)); do
-    xdg-open http://127.0.0.1:8080/inital.html &
+    xdg-open http://127.0.0.1:8080 &
 done
 
 # Wait for backend process to finish

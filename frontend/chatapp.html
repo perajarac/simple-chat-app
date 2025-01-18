@@ -3,19 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SimpleChatLogin</title>
+    <title>SimpleChat</title>
     <link rel="stylesheet" href="front-styles.css">
-    <script defer src="initial.js"></script>
+    <script defer src="chatapp.js"></script>
 </head>
 <body>
-    <div class="username-container">
+    <div class="chat-container">
         <header>
-            <h1>Enter Your Username</h1>
+            <h1>SimpleChat</h1>
             <button id="themeToggle">🌙</button>
         </header>
+        <div id="chat-box" class="chat-box"></div>
         <div class="input-container">
-            <input type="text" id="username" placeholder="Enter your username...">
-            <button id="submitUsername">Submit</button>
+            <input type="text" id="message" placeholder="Type a message...">
+            <button id="send">Send</button>
         </div>
     </div>
 </body>
